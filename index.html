@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishaan Mittal - Portfolio Webiste</title>
+    <title>Ishaan Mittal - Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <canvas id="interactive-bg"></canvas>
     <div class="container">
         <nav class="navbar">
             <div class="logo">
@@ -18,8 +19,10 @@
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Home</a></li>
                     <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
                     <li><a href="#tech-stack" class="nav-item">Tech Stack</a></li>
                     <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#experience" class="nav-item">Experience</a></li>
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                     <li><a href="#resume" class="nav-item resume-link">Resume</a></li>
                 </ul>
@@ -41,100 +44,285 @@
 
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Ishaan Mittal</h1>
-                <p>An 18-year-old pursuing Software Engineering</p>
+                <h1 id="typing-name"></h1>
+                <p id="typing-description"></p>
                 <div class="hero-animation"></div>
+                <div class="hero-cta">
+                    <a href="#contact" class="cta-button">Let's Connect</a>
+                    <a href="#projects" class="cta-button secondary">View Work</a>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="about" class="section scroll-reveal">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>Hey! I am currently a Computer Engineering Student at the University of Waterloo. I am very passionate about programming however apart from coding I also enjoy playing soccer/cricket, leading my platoon in cadets, competitive esports and finally debate. As per my experince, I have been involved with my schools FRC team and am activley particpating in hackathons to build my programming skills.
-My future aspirations revolve around either working for a reputable company as a software engineer or seeking an enterinpuel ventrue to start a company that builds/creates techincal 'gadgets' to solve real-world problems, similar to my favourite tv show character, Doremon. I hope to achive this by employment oppurtuines, online/university courses to help ehance my programming skills, and taking part in hackathons to apply my knowledge.</p>
+                <div class="about-text">
+                    <p>Hey! I am currently a Computer Engineering Student at the University of Waterloo. I am very passionate about programming however apart from coding I also enjoy playing soccer/cricket, leading my platoon in cadets, competitive esports and finally debate. As per my experience, I have been involved with my school's FRC team and am actively participating in hackathons to build my programming skills.</p>
+                    <p>My future aspirations revolve around either working for a reputable company as a software engineer or seeking an entrepreneurial venture to start a company that builds/creates technical 'gadgets' to solve real-world problems, similar to my favourite tv show character, Doraemon. I hope to achieve this through employment opportunities, online/university courses to help enhance my programming skills, and taking part in hackathons to apply my knowledge.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="18">0</span>
+                        <span class="stat-label">Years Old</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="8">0</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="tech-stack" class="section">
-          <h2>Tech Stack</h2>
-          <div class="tech-stack">
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-              <i class="fab fa-js"></i>
-              <i class="fab fa-react"></i>
-              <i class="fab fa-node"></i>
-              <i class="fab fa-python"></i>
-              <i class="fab fa-git-alt"></i>
-              <i class="fas fa-database"></i>
-          </div>
-      </section>
-
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="project-matrix">
-            <div class="project-item">
-                <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/661/814/datas/medium.png" alt="Chat App">
-                <h3>NeuroGait</h3>
-                <p>Data-driven application designed to analyze gait metrics for the early detection of cognitive and motor decline associated with Alzheimer’s and Parkinson’s diseases.</p>
-                <div class="languages">
-                    <span>React</span>
-                    <span>WebSocket</span>
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span> OpenCV </span>
-
+        <section id="skills" class="section scroll-reveal">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">React</span>
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-progress" data-width="88%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">FastAPI</span>
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">OpenCV</span>
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Database</span>
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-item">
-                <img src="https://i.ibb.co/Q7h3zxNZ/logoBG.png" alt="logoBG" border="0">
-                <h3>SmartVault</h3>
-                <p> A secure mobile banking app that lets users transfer money, check balances, and cash out. Includes a stock market simulation to earn vouchers and features Face ID authentication for enhanced security. </p>
-                <div class="languages">
-                    <span>Java</span>
-                    <span>OpenCV</span>
-                    <span>JavaSwing</span>
-                    <span>Zxing</span>
-                    <span>Alpha Vantage</span>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="https://i.ibb.co/C5cFrg9v/project1.png" alt="Task Manager">
-                <h3>BookVault</h3>
-                <p>A library management program that lets users log in, check out/return books, and rate them. Data is stored in files for persistence. Supports USB and webcam barcode scanning for ISBN input and tracks due dates with overdue notifications.</p>
-                <div class="languages">
-                    <span>C#</span>
-                    <span>Windowsform</span>
-                    <span>.NET MAUI</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section">
-      <h2>Contact Me</h2>
-      <div class="contact-content">
-          <p>Let's connect! Reach out for collaborations or opportunities.</p>
-          <div class="contact-icons">
-              <a href="#" class="contact-icon"><i class="fab fa-github"></i></a>
-              <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="contact-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="contact-icon"><i class="fas fa-envelope"></i></a>
-          </div>
-      </div>
-  </section>
+        <section id="tech-stack" class="section scroll-reveal">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item" data-name="HTML5">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="tech-item" data-name="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="tech-item" data-name="JavaScript">
+                    <i class="fab fa-js"></i>
+                </div>
+                <div class="tech-item" data-name="React">
+                    <i class="fab fa-react"></i>
+                </div>
+                <div class="tech-item" data-name="Node.js">
+                    <i class="fab fa-node"></i>
+                </div>
+                <div class="tech-item" data-name="Python">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="tech-item" data-name="Git">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="tech-item" data-name="Database">
+                    <i class="fas fa-database"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section scroll-reveal">
+            <h2>Featured Projects</h2>
+            <div class="project-matrix">
+                <div class="project-item">
+                    <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/661/814/datas/medium.png" alt="NeuroGait">
+                    <div class="project-content">
+                        <h3>NeuroGait</h3>
+                        <p>Data-driven application designed to analyze gait metrics for the early detection of cognitive and motor decline associated with Alzheimer's and Parkinson's diseases.</p>
+                        <div class="languages">
+                            <span>React</span>
+                            <span>WebSocket</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://i.ibb.co/Q7h3zxNZ/logoBG.png" alt="SmartVault">
+                    <div class="project-content">
+                        <h3>SmartVault</h3>
+                        <p>A secure mobile banking app that lets users transfer money, check balances, and cash out. Includes a stock market simulation to earn vouchers and features Face ID authentication for enhanced security.</p>
+                        <div class="languages">
+                            <span>Java</span>
+                            <span>OpenCV</span>
+                            <span>JavaSwing</span>
+                            <span>Zxing</span>
+                            <span>Alpha Vantage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://i.ibb.co/C5cFrg9v/project1.png" alt="BookVault">
+                    <div class="project-content">
+                        <h3>BookVault</h3>
+                        <p>A library management program that lets users log in, check out/return books, and rate them. Data is stored in files for persistence. Supports USB and webcam barcode scanning for ISBN input and tracks due dates with overdue notifications.</p>
+                        <div class="languages">
+                            <span>C#</span>
+                            <span>Windowsform</span>
+                            <span>.NET MAUI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section scroll-reveal">
+            <h2>Experience Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Computer Engineering Student</h3>
+                        <h4>University of Waterloo</h4>
+                        <p>Pursuing degree in Computer Engineering with focus on software development and innovative technology solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>FRC Team Member</h3>
+                        <h4>School Robotics Team</h4>
+                        <p>Actively participated in FIRST Robotics Competition, developing programming skills and collaborative engineering solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Hackathon Participant</h3>
+                        <h4>Various Competitions</h4>
+                        <p>Regular participant in hackathons to apply programming knowledge and develop innovative solutions under time constraints.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Platoon Leader</h3>
+                        <h4>Cadets Program</h4>
+                        <p>Leadership role managing and guiding fellow cadets, developing strong communication and organizational skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section scroll-reveal">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm always interested in hearing about new opportunities, collaborations, or just having a chat about technology and innovation.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ishmittal12@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Waterloo, Ontario</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <footer>
-            <p>©2025 Ishaan Mittal. All rights reserved.</p>
+            <p>© 2025 Ishaan Mittal. All rights reserved.</p>
         </footer>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
